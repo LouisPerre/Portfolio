@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    outline: red 1px solid;
+    //outline: red 1px solid;
 }
 
 @font-face {
@@ -10,6 +10,31 @@
     src: url('font/ONEDAY.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@keyframes scale {
+    0% {
+        transform: translateY(-1px);
+    }
+    33% {
+        transform: translateY(-2px);
+    }
+    66% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
 }
 
 body {
@@ -40,12 +65,34 @@ header {
         text-orientation: upright;
         align-items: center;
         position: fixed;
+        overflow: hidden;
+
+        .burgerMenu {
+            margin-top: 24px;
+            cursor: pointer;
+            transition: transform 650ms;
+
+            span {
+                font-size: 36px;
+            }
+
+            &.open {
+                transform: rotate(90deg);
+            }
+        }
         
     
         ul {
             list-style: none;
             display: flex;
             flex-direction: row;
+            opacity: 0.2;
+            transform: translateX(-50px);
+            transition: transform 650ms;
+
+            &.open {
+                transform: translateX(0);
+            }
     
             li {
                 margin-top: 40px;
@@ -123,7 +170,7 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: red;
+        background-color: #fffffa;
         border-radius: 10px;
         margin: 1%;
 
@@ -137,6 +184,34 @@ main {
             width: 48px;
             height: 48px;
         }
+    }
+
+    .jumpTo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(77, 77, 77, 0.25);
+        text-decoration: none;
+        color: black;
+        animation: scale 850ms infinite;
+    }
+    
+}
+
+.presentation {
+    grid-column: 2 / 7;
+    grid-row: 5 / 9;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 700px;
+        
     }
 }
 
