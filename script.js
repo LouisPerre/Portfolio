@@ -49,3 +49,88 @@ if (window.location.pathname == "/project.html") {
     })
 
 }
+
+if (window.location.pathname == "/competence.html") {
+    const projectTitle = document.querySelector(".projectTitle")
+    const CompTitle = document.querySelector(".CompTitle")
+    const firstP = document.querySelector(".firstP")
+    const secondP = document.querySelector(".secondP")
+    const thirdP = document.querySelector(".thirdP")
+    const illustration1 = document.querySelector(".firstIMG")
+    const illustration2 = document.querySelector(".secondIMG")
+    const button = document.querySelector('.square')
+    console.log(projectTitle)
+
+    button.addEventListener("click", function() {
+        console.log(illustration1)
+        if (projectTitle.innerHTML == "PYTHON") {
+            projectTitle.innerHTML = "GIT"
+            CompTitle.innerHTML = "GIT & GITHUB"
+            firstP.innerHTML = "Utilisation complète de GIT, que ce soit en ligne de commande ou via GitKraken, pour une intégration sur github ainsi qu’un travail collaboratif complet."
+            secondP.innerHTML = "Apprentissage lors d’une semaine de cours complète, durant laquelle nous avons vu les conventions de nommage, la création de branche ainsi que la gestion de conflits."
+            thirdP.innerHTML = "Utilisation de git commit, push, clone, pull ainsi que merge"
+            illustration1.src = "logo/GitHub-Logo.png"
+            illustration2.src = "logo/Git-Logo.png"
+            illustration2.style.display = "block"
+            //illustration2.style.width = "100%"
+            //illustration1.style.width = "100%"
+
+        } else if (projectTitle.innerHTML == "HTML") {
+            projectTitle.innerHTML = "CSS"
+            CompTitle.innerHTML = "CSS & SCSS"
+            firstP.innerHTML = "Apprentissage poussé de CSS avec une compréhension du grid, flex ainsi que des transitions."
+            secondP.innerHTML = "Recente formation au SCSS qui comprend l'utilisation des import ainsi que des variables et des conventions de nommages."
+            thirdP.innerHTML = "Utilisation des selecteurs en respectant les forces tels que les class, les tags name, etc."
+            illustration1.src = "logo/CSS3_logo.png"
+            illustration2.src = "logo/Sass_Logo.png"
+            //illustration1.style.width = "50%"
+            illustration2.style.display = "block"
+            //illustration2.style.width = "50%"
+
+        } else if (projectTitle.innerHTML == "CSS") {
+            projectTitle.innerHTML = "JS"
+            CompTitle.innerHTML = "Java Script"
+            firstP.innerHTML = "Le JS est un code très apprécié car il complète le site à l'aide d'animations ou d'effets sur certains éléments HTML"
+            secondP.innerHTML = "Je sais comment selectionner un élément, le modifier, en créer de nouveaux."
+            thirdP.innerHTML = "Je peux aussi créer des animations basiques pour rendre le site plus beau et plus agréable."
+            illustration1.src = "logo/js-logo.png"
+            illustration2.style.display = "none"
+            //illustration1.style.width = "50%"
+
+        } else if (projectTitle.innerHTML == "GIT") {
+            projectTitle.innerHTML = "HTML"
+            CompTitle.innerHTML = "HTML 5"
+            firstP.innerHTML = "Sur du HTML je dirais que je suis plutot à l'aise."
+            secondP.innerHTML = "Je sais comment l'utiliser proprement, en gardant les normes en place sans en avoir peur."
+            thirdP.innerHTML = "Je peux faire un code relativement propre qui respectera les normes W3."
+            illustration1.src = "logo/HTML5png.png"
+            illustration2.style.display = "none"
+            //illustration1.style.width = "50%"
+
+        } else if (projectTitle.innerHTML == "PHP") {
+            projectTitle.innerHTML = "PYTHON"
+            CompTitle.innerHTML = "PYTHON"
+            firstP.innerHTML = "Le python est un language que j'aime énormement car je le trouve simple à utiliser et à comprendre"
+            secondP.innerHTML = "Je peux utiliser à peut près tout les types d'items pour créer de beau algorithmes pour par exemples résdoudre des équations ou créer des suites chiffres validant l'algorithme de Luhn"
+            thirdP.innerHTML = "Le code que je fais peut ne pas paraitre propre mais j'essaye de l'optimiser au mieux"
+            illustration1.src = "logo/Python-logo.png"
+            illustration2.style.display = "none"
+            //illustration1.style.width = "50%"
+
+        } else if (projectTitle.innerHTML == "JS") {
+            projectTitle.innerHTML = "PHP"
+            CompTitle.innerHTML = "PHP & MYSQL"
+            firstP.innerHTML = "Le PHP est un code que j'adore car il rend un site passif intéractif."
+            secondP.innerHTML = "Je sais comment utiliser $_FILES pour telecharger un fichier fourni par l'utilisateur, $_SESSION pour stocker des informations utiles a la navigation, $_POST ou $_SERVER pour récuperer les actions d'un form."
+            thirdP.innerHTML = "Pour MYSQL je sais comment séléctionné, insérer, supprimer ou modifier des choses dans la base de données. Grace à ces deux languages j'ai créer une version simplifier de twitter."
+            illustration1.src = "logo/PHP-logo.png"
+            illustration1.src = "logo/MySQL.png"
+            illustration2.style.display = "block"
+            //illustration1.style.width = "50%"
+            //illustration2.style.width = "50%"
+
+        }
+
+    })
+
+}

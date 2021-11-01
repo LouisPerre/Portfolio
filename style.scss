@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     //outline: red 1px solid;
+    scroll-behavior: smooth;
 }
 
 @font-face {
@@ -184,6 +185,7 @@ header {
         background-color: #fffffa;
         border-radius: 10px;
         margin: 1%;
+        
 
         &.rightArr {
             margin-right: 4%;
@@ -415,7 +417,7 @@ header {
     display: grid;
     height: auto;
     grid-template-columns: 80px 1fr 32px;
-    grid-template-rows: 140px 1fr 130px;
+    grid-template-rows: 100px 1fr 130px;
     column-gap: 90px;
     
 
@@ -472,7 +474,7 @@ header {
             box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.25);
             border-radius: 10px;
             width: 49%;
-            height: 92%;
+            height: 85%;
             padding: 2%;
             display: flex;
             flex-direction: column;
@@ -504,9 +506,15 @@ header {
             height: auto;
             width: 42%;
             margin: 1%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
 
             img {
-                width: 100%;
+                max-height: 387px;
+                width: 50%;
+                margin: 1%;
             }
         }
 
@@ -534,6 +542,7 @@ header {
             text-decoration: none;
             color: black;
             transform: rotate(-90deg);
+            cursor: pointer;
             //animation: scale 850ms infinite;
         }
     }
