@@ -1,0 +1,14 @@
+$xl : 1366px;
+
+@mixin xl {
+    @media screen and (max-width: $xl) {
+        @content
+    }
+}
+
+$l : 360px;
+@mixin l {
+    @media screen and (max-width: $l) {
+        @content
+    }
+}
