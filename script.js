@@ -27,7 +27,7 @@ if (window.location.pathname == "/Portfolio/project.html") {
             thirdP.innerHTML = "Une bibliothèque me permet de récuperer la couleur principale de la pochette de la musique pour ensuite l’injécter dans le background."
             forthP.innerHTML = "La bibliothèque est : “imgcolr-master”."
             fifthP.innerHTML = "Lien github : “”"
-            illustration.style.backgroundImage = "url('./AudioAPP.PNG')"
+            illustration.style.backgroundImage = "url('/AudioAPP.PNG')"
         } else if (projectTitle.innerHTML == "SUPER SIMON") {
             projectTitle.innerHTML = "ANIME APP"
             firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS, JSON"
@@ -35,7 +35,7 @@ if (window.location.pathname == "/Portfolio/project.html") {
             thirdP.innerHTML = "Lors de l'appelle à l'API je reçoit un fichier JSON que je dois gerer en JS pour pouvoir travailler avec"
             forthP.innerHTML = "Explication fonction JSON."
             fifthP.innerHTML = "Lien github : “”"
-            illustration.style.backgroundImage = "url('./AnimeAPP.PNG')"
+            illustration.style.backgroundImage = "url('/AnimeAPP.PNG')"
         } else if (projectTitle.innerHTML == "AUDIO APP") {
             projectTitle.innerHTML = "SUPER SIMON"
             firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS"
@@ -43,7 +43,7 @@ if (window.location.pathname == "/Portfolio/project.html") {
             thirdP.innerHTML = "Lors du lancement de la partie plusieurs fonction asynchrone se lance et travaille ensemble pour faire évoluer le niveau de difficulté."
             forthP.innerHTML = "Explication asynchrone"
             fifthP.innerHTML = "Le projet n'est pas fini, voiçi le Lien github : “”"
-            illustration.style.backgroundImage = "url('./SuperSimon.PNG')"
+            illustration.style.backgroundImage = "url('/SuperSimon.PNG')"
         }
 
     })
