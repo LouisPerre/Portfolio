@@ -1,4 +1,12 @@
-$xl : 1366px;
+$xxl : 1800px;
+
+@mixin xxl {
+    @media screen and (max-width: $xxl) {
+        @content
+    }
+}
+
+$xl : 1450px;
 
 @mixin xl {
     @media screen and (max-width: $xl) {
@@ -6,9 +14,17 @@ $xl : 1366px;
     }
 }
 
-$l : 360px;
+$l : 1200px;
+
 @mixin l {
     @media screen and (max-width: $l) {
+        @content
+    }
+}
+
+$m : 560px;
+@mixin m {
+    @media screen and (max-width: $m) {
         @content
     }
 }
