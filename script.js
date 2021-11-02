@@ -7,7 +7,7 @@ burgerMenu.addEventListener("click", function() {
 })
 
 
-if (window.location.pathname == "/project.html") {
+if (window.location.pathname == "/Portfolio/project.html") {
     const projectTitle = document.querySelector(".projectTitle")
     const firstP = document.querySelector(".firstP")
     const secondP = document.querySelector(".secondP")
@@ -50,7 +50,7 @@ if (window.location.pathname == "/project.html") {
 
 }
 
-if (window.location.pathname == "/competence.html") {
+if (window.location.pathname == "/Portfolio/competence.html") {
     const projectTitle = document.querySelector(".projectTitle")
     const CompTitle = document.querySelector(".CompTitle")
     const firstP = document.querySelector(".firstP")
