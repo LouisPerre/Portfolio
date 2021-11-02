@@ -16,6 +16,7 @@ if (window.location.pathname == "/Portfolio/project.html") {
     const fifthP = document.querySelector(".fifthP")
     const illustration = document.querySelector(".bgi")
     const button = document.querySelector('.square')
+    const link = document.querySelector('#linkGit')
     console.log(projectTitle)
 
     button.addEventListener("click", function() {
@@ -26,23 +27,30 @@ if (window.location.pathname == "/Portfolio/project.html") {
             secondP.innerHTML = "Une page WEB qui lit des musiques en adaptant son background en fonction de la cover."
             thirdP.innerHTML = "Une bibliothèque me permet de récuperer la couleur principale de la pochette de la musique pour ensuite l’injécter dans le background."
             forthP.innerHTML = "La bibliothèque est : “imgcolr-master”."
-            fifthP.innerHTML = "Lien github : “”"
+            link.style.display = "block"
+            fifthP.style.display = "block"
+            link.href = "https://github.com/LouisPerre/Music-App-Player"
+            fifthP.innerHTML = "Lien github : https://github.com/LouisPerre/Music-App-Player"
             illustration.style.backgroundImage = "url('img/AudioAPP.PNG')"
         } else if (projectTitle.innerHTML == "SUPER SIMON") {
             projectTitle.innerHTML = "ANIME APP"
             firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS, JSON"
             secondP.innerHTML = "Une page WEB qui appelle une API pour récuperer une liste d'animé et d'ensuite créer une carte associé"
             thirdP.innerHTML = "Lors de l'appelle à l'API je reçoit un fichier JSON que je dois gerer en JS pour pouvoir travailler avec"
-            forthP.innerHTML = "Explication fonction JSON."
-            fifthP.innerHTML = "Lien github : “”"
+            forthP.innerHTML = "Utilisation de fetch() pour créer une promesse de l'objet de la requete, res.json() pour résoudre la promesse et pouvoir travailler avec l'objet puis map pour créer un tableau javaScript"
+            link.style.display = "none"
+            fifthP.style.display = "none"
             illustration.style.backgroundImage = "url('img/AnimeAPP.PNG')"
         } else if (projectTitle.innerHTML == "AUDIO APP") {
             projectTitle.innerHTML = "SUPER SIMON"
             firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS"
             secondP.innerHTML = "Une page WEB qui lance le jeu 'Simon' grace à des sons et des lumières qui nous permette de jouer"
             thirdP.innerHTML = "Lors du lancement de la partie plusieurs fonction asynchrone se lance et travaille ensemble pour faire évoluer le niveau de difficulté."
-            forthP.innerHTML = "Explication asynchrone"
-            fifthP.innerHTML = "Le projet n'est pas fini, voiçi le Lien github : “”"
+            forthP.innerHTML = "Les fonctions dites 'async' servent souvent a contenir une expression await qui interrompt l'éxécution de la fonctgion pour pouvoir résoudre une promesse"
+            link.style.display = "block"
+            fifthP.style.display = "block"
+            link.href = "https://github.com/LouisPerre/Super-Simon"
+            fifthP.innerHTML = "Le projet n'est pas fini, voiçi le Lien github : https://github.com/LouisPerre/Super-Simon"
             illustration.style.backgroundImage = "url('img/SuperSimon.PNG')"
         }
 
