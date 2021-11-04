@@ -720,10 +720,14 @@ header {
                 @include l {
                     width: 60%;
                 }
+                @include sl {
+                    flex-direction: row;
+                }
+                
                 @include m {
                     width: 75%;
                     margin-bottom: 5%;
-                    flex-direction: row;
+                    
                 }
             }
         }

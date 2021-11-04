@@ -717,11 +717,15 @@ header .navbar a .prenom {
     width: 60%;
   }
 }
+@media screen and (max-width: 1000px) {
+  .competence .projectAnnounce .bgi img {
+    flex-direction: row;
+  }
+}
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .bgi img {
     width: 75%;
     margin-bottom: 5%;
-    flex-direction: row;
   }
 }
 .competence .projectAnnounce .square {
