@@ -7,6 +7,13 @@ burgerMenu.addEventListener("click", function() {
 })
 
 
+window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+
+
 if (window.location.pathname == "/Portfolio/project.html") {
     const projectTitle = document.querySelector(".projectTitle")
     const firstP = document.querySelector(".firstP")
