@@ -667,7 +667,7 @@ header {
             }
             @include sl {
                 width: 100%;
-                height: 50%;
+                height: auto;
                 order: 2;
             }
 
@@ -719,6 +719,7 @@ header {
                 }
                 @include m {
                     width: 75%;
+                    margin-bottom: 5%;
                 }
             }
         }
