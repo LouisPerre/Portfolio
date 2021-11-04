@@ -682,6 +682,7 @@ header .navbar a .prenom {
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .explanation p {
     font-size: 14px;
+    line-height: 25px;
   }
 }
 .competence .projectAnnounce .separation {
