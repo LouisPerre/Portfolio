@@ -706,7 +706,6 @@ header .navbar a .prenom {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 }
 .competence .projectAnnounce .bgi img {
   max-height: 387px;
@@ -722,6 +721,7 @@ header .navbar a .prenom {
   .competence .projectAnnounce .bgi img {
     width: 75%;
     margin-bottom: 5%;
+    flex-direction: row;
   }
 }
 .competence .projectAnnounce .square {
