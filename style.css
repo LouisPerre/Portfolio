@@ -745,7 +745,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .square {
-    margin-bottom: 90px;
+    margin-left: 90px;
   }
 }
 .competence .projectAnnounce .jumpTo {
