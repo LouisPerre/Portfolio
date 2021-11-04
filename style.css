@@ -777,6 +777,7 @@ header .navbar a .prenom {
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .jumpTo {
     margin: 0 0 10% 0;
+    transform: rotate(0);
   }
 }
 

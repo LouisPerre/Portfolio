@@ -780,6 +780,7 @@ header {
 
             @include m {
                 margin: 0 0 10% 0;
+                transform: rotate(0);
             }
         }
     }
