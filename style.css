@@ -743,6 +743,11 @@ header .navbar a .prenom {
     order: 3;
   }
 }
+@media screen and (max-width: 560px) {
+  .competence .projectAnnounce .square {
+    margin-bottom: 90px;
+  }
+}
 .competence .projectAnnounce .jumpTo {
   display: flex;
   justify-content: center;
