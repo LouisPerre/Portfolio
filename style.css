@@ -725,7 +725,7 @@ header .navbar a .prenom {
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .bgi img {
     width: 75%;
-    margin-bottom: 5%;
+    margin-left: 5%;
   }
 }
 .competence .projectAnnounce .square {
