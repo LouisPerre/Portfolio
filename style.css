@@ -629,13 +629,9 @@ header .navbar a .prenom {
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 1000px) {
-  .competence .projectAnnounce {
-    height: 100vh;
-  }
-}
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce {
+    height: 100vh;
     grid-row: 1/2;
   }
 }

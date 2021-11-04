@@ -637,10 +637,8 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        @include sl {
-            height: 100vh;
-        }
         @include m {
+            height: 100vh;
             grid-row: 1 / 2;
         }
 
