@@ -636,6 +636,9 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
+        @include sl {
+            height: auto;
+        }
         @include m {
             grid-row: 1 / 2;
         }
