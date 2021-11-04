@@ -631,7 +631,6 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce {
-    height: calc(100vh - 80px);
     height: calc(var(--vh, 1vh) * 100 - 80px);
     grid-row: 1/2;
   }
@@ -643,6 +642,11 @@ header .navbar a .prenom {
   font-family: "ONEDAY";
   font-size: 42px;
   font-weight: 400;
+}
+@media screen and (max-width: 560px) {
+  .competence .projectAnnounce .CompTitle {
+    margin: 5% 0;
+  }
 }
 .competence .projectAnnounce .explanation {
   background: #FFFFFF;
@@ -667,6 +671,11 @@ header .navbar a .prenom {
     width: 100%;
     height: auto;
     order: 2;
+  }
+}
+@media screen and (max-width: 560px) {
+  .competence .projectAnnounce .explanation {
+    margin: 5% 0;
   }
 }
 .competence .projectAnnounce .explanation p {
@@ -712,6 +721,11 @@ header .navbar a .prenom {
     flex-direction: row;
   }
 }
+@media screen and (max-width: 560px) {
+  .competence .projectAnnounce .bgi {
+    margin: 5%;
+  }
+}
 .competence .projectAnnounce .bgi img {
   max-height: 387px;
   width: 50%;
@@ -738,14 +752,12 @@ header .navbar a .prenom {
   border-radius: 10px;
   margin: 1%;
 }
+.competence .projectAnnounce .square span {
+  transform: rotate(-90deg);
+}
 @media screen and (max-width: 1000px) {
   .competence .projectAnnounce .square {
     order: 3;
-  }
-}
-@media screen and (max-width: 560px) {
-  .competence .projectAnnounce .square {
-    margin-left: 90px;
   }
 }
 .competence .projectAnnounce .jumpTo {
@@ -761,6 +773,11 @@ header .navbar a .prenom {
   color: black;
   transform: rotate(-90deg);
   cursor: pointer;
+}
+@media screen and (max-width: 560px) {
+  .competence .projectAnnounce .jumpTo {
+    margin: 0 0 10% 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
