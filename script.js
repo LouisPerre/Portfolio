@@ -137,7 +137,7 @@ if (window.location.pathname == "/Portfolio/competence.html") {
             CompTitle.innerHTML = "PHP & MYSQL"
             firstP.innerHTML = "Le PHP est un code que j'adore car il rend un site passif intéractif."
             secondP.innerHTML = "Je sais comment utiliser $_FILES pour telecharger un fichier fourni par l'utilisateur, $_SESSION pour stocker des informations utiles a la navigation, $_POST ou $_SERVER pour récuperer les actions d'un form."
-            thirdP.innerHTML = "Pour MYSQL je sais comment séléctionné, insérer, supprimer ou modifier des choses dans la base de données. Grace à ces deux languages j'ai créer une version simplifier de twitter. Pour MYSQL je sais comment séléctionné, insérer, supprimer ou modifier des choses dans la base de données. Grace à ces deux languages j'ai créer une version simplifier de twitter."
+            thirdP.innerHTML = "Pour MYSQL je sais comment séléctionné, insérer, supprimer ou modifier des choses dans la base de données. Grace à ces deux languages j'ai créer une version simplifier de twitter."
             illustration1.src = "logo/PHP-logo.png"
             illustration2.src = "logo/MySQL.png"
             illustration2.style.display = "block"
