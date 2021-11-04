@@ -22,6 +22,14 @@ $l : 1200px;
     }
 }
 
+$sl : 1000px;
+
+@mixin sl {
+    @media screen and (max-width: $sl) {
+        @content
+    }
+}
+
 $m : 560px;
 @mixin m {
     @media screen and (max-width: $m) {
