@@ -638,7 +638,7 @@ header {
         align-items: center;
         justify-content: center;
         @include m {
-            height: 100vh;
+            height: calc(100vh - 80px);
             grid-row: 1 / 2;
         }
 

@@ -631,7 +631,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce {
-    height: 100vh;
+    height: calc(100vh - 80px);
     grid-row: 1/2;
   }
 }
