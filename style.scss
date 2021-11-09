@@ -462,7 +462,7 @@ header {
     @include m {
         column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
-        grid-template-rows: 80px calc(100vh - 160px) 80px;
+        grid-template-rows: 80px 1fr 80px;
     }
     
 
@@ -504,9 +504,9 @@ header {
         padding-left: 4%;
         @include sl {
             flex-wrap: wrap-reverse;
-            overflow: scroll;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+            //overflow: scroll;
+            //-ms-overflow-style: none;
+            //scrollbar-width: none;
             padding: 0;
             justify-content: center;
             justify-self: normal;
