@@ -470,7 +470,7 @@ header .navbar a .prenom {
   .project {
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
-    grid-template-rows: 80px 1fr 80px;
+    grid-template-rows: 80px calc(100vh - 160px) 80px;
   }
 }
 .project header {
