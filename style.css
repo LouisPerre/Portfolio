@@ -514,6 +514,7 @@ header .navbar a .prenom {
 @media screen and (max-width: 1000px) {
   .project .projectAnnounce {
     flex-wrap: wrap-reverse;
+    overflow: scroll;
     padding: 0;
     justify-content: center;
     justify-self: normal;

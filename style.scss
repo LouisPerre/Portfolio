@@ -504,7 +504,7 @@ header {
         padding-left: 4%;
         @include sl {
             flex-wrap: wrap-reverse;
-            //overflow: scroll;
+            overflow: scroll;
             //-ms-overflow-style: none;
             //scrollbar-width: none;
             padding: 0;
