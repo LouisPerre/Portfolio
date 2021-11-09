@@ -487,6 +487,7 @@ header .navbar a .prenom {
   }
   .project header .navbar {
     bottom: 0;
+    z-index: 2;
   }
 }
 .project .projectTitle {
