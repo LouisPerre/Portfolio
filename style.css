@@ -470,7 +470,7 @@ header .navbar a .prenom {
   .project {
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
-    grid-template-rows: 80px calc(100vh - 160px) 80px;
+    grid-template-rows: 80px 1fr 80px;
   }
 }
 .project header {
@@ -484,6 +484,9 @@ header .navbar a .prenom {
     width: 100vw;
     grid-column: 1/3;
     grid-row: 3/4;
+  }
+  .project header .navbar {
+    bottom: 0;
   }
 }
 .project .projectTitle {
@@ -592,7 +595,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 1000px) {
   .project .projectAnnounce .bgi {
-    height: 45%;
+    height: 35vh;
     width: 95%;
     order: 0;
     position: static;

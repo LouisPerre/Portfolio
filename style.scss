@@ -462,7 +462,7 @@ header {
     @include m {
         column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
-        grid-template-rows: 80px calc(100vh - 160px) 80px;
+        grid-template-rows: 80px 1fr 80px;
     }
     
 
@@ -475,7 +475,11 @@ header {
             width: 100vw;
             grid-column: 1 / 3;
             grid-row: 3 / 4;
+            .navbar {
+                bottom: 0;
+            }
         }
+
     }
 
     .projectTitle {
@@ -590,7 +594,7 @@ header {
             left: -40px;
             z-index: -1;
             @include sl {
-                height: 45%;
+                height: 35vh;
                 width: 95%;
                 order: 0;
                 position: static;
