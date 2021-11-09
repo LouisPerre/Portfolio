@@ -505,6 +505,7 @@ header {
         @include sl {
             flex-wrap: wrap-reverse;
             overflow: scroll;
+            -webkit-overflow-scrolling: touch;
             //-ms-overflow-style: none;
             //scrollbar-width: none;
             padding: 0;
