@@ -543,7 +543,7 @@ header .navbar a .prenom {
   .project .projectAnnounce .explanation {
     width: 95%;
     height: auto;
-    order: 2;
+    order: -1;
     margin-top: 5%;
     box-shadow: 0px 10px 10px rgba(51, 51, 51, 0.25);
   }
@@ -595,7 +595,7 @@ header .navbar a .prenom {
   .project .projectAnnounce .bgi {
     height: 45%;
     width: 95%;
-    order: 3;
+    order: 0;
     position: static;
   }
 }
@@ -625,7 +625,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .project .projectAnnounce .jumpTo {
-    order: 0;
+    order: -2;
     margin: 40px 0;
   }
 }
