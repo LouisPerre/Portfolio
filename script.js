@@ -14,7 +14,7 @@ window.addEventListener('resize', () => {
   });
 
 
-if (window.location.pathname == "/Portfolio/project.html" or "/project.html") {
+if (window.location.pathname == "/Portfolio/project.html" or window.location.pathname == "/project.html") {
     const projectTitle = document.querySelector(".projectTitle")
     const firstP = document.querySelector(".firstP")
     const secondP = document.querySelector(".secondP")
@@ -65,7 +65,7 @@ if (window.location.pathname == "/Portfolio/project.html" or "/project.html") {
 
 }
 
-if (window.location.pathname == "/Portfolio/competence.html" or "/competence.html") {
+if (window.location.pathname == "/Portfolio/competence.html" or window.location.pathname == "/competence.html") {
     const projectTitle = document.querySelector(".projectTitle")
     const CompTitle = document.querySelector(".CompTitle")
     const firstP = document.querySelector(".firstP")
