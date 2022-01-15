@@ -13,6 +13,7 @@
     <title>Competences Louis Perrenot</title>
 </head>
 <body class="competence">
+    <div id="snow"></div>
     <header class="header">
         <nav class="navbar">
             <div class="burgerMenu">
@@ -40,30 +41,97 @@
         
     </header>
 
-    <h2 class="projectTitle">HTML</h2>
+    <h2 class="projectTitle">COMPETENCES</h2>
     <span class="separation"></span>
-    <main class="projectAnnounce">
-        <h2 class="CompTitle">HTML 5</h2>
-        <div class="explanation">
-            <p class="firstP">Sur du HTML je dirais que je suis plutot à l'aise.</p>
-            <p class="secondP">Je sais comment l'utiliser proprement, en gardant les normes en place sans en avoir peur.</p>
-            <p class="thirdP">Je peux faire un code relativement propre qui respectera les normes W3.</p>
+    <main class="swiper2 projectAnnounce">
+        <div class="swiper-wrapper">
+           <div class="swiper-slide">
+                <h2 class="CompTitle">HTML 5</h2>
+                <div class="explanation">
+                    <p class="firstP">Sur du HTML je dirais que je suis plutot à l'aise.</p>
+                    <p class="secondP">Je sais comment l'utiliser proprement, en gardant les normes en place sans en avoir peur.</p>
+                    <p class="thirdP">Je peux faire un code relativement propre qui respectera les normes W3.</p>
+                </div>
+                
+        
+                <div class="bgi">
+                    <img class="firstIMG" src="logo/HTML5png.png" alt="Github Logo">
+                </div>
+           </div>
+           <div class="swiper-slide">
+                <h2 class="CompTitle">GIT & GITHUB</h2>
+                <div class="explanation">
+                    <p class="firstP">Utilisation complète de GIT, que ce soit en ligne de commande ou via GitKraken, pour une intégration sur github ainsi qu’un travail collaboratif complet.</p>
+                    <p class="secondP">Apprentissage lors d’une semaine de cours complète, durant laquelle nous avons vu les conventions de nommage, la création de branche ainsi que la gestion de conflits.</p>
+                    <p class="thirdP">Utilisation de git commit, push, clone, pull ainsi que merge</p>
+                </div>
+                
+        
+                <div class="bgi">
+                    <img class="firstIMG" src="logo/GitHub-Logo.png" alt="Github Logo">
+                    <img class="firstIMG" src="logo/Git-Logo.png" alt="Git Logo">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="CompTitle">CSS & SCSS</h2>
+                <div class="explanation">
+                    <p class="firstP">Apprentissage poussé de CSS avec une compréhension du grid, flex ainsi que des transitions.</p>
+                    <p class="secondP">Recente formation au SCSS qui comprend l'utilisation des import ainsi que des variables et des conventions de nommages.</p>
+                    <p class="thirdP">Utilisation des selecteurs en respectant les forces tels que les class, les tags name, etc.</p>
+                </div>
+                
+        
+                <div class="bgi">
+                    <img class="firstIMG" src="logo/CSS3_logo.png" alt="Logo CSS">
+                    <img class="firstIMG" src="logo/Sass_Logo.png" alt="Logo SASS">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="CompTitle">Java Script</h2>
+                <div class="explanation">
+                    <p class="firstP">Le JS est un code très apprécié car il complète le site à l'aide d'animations ou d'effets sur certains éléments HTML</p>
+                    <p class="secondP">Je sais comment selectionner un élément, le modifier, en créer de nouveaux.</p>
+                    <p class="thirdP">Je peux aussi créer des animations basiques pour rendre le site plus beau et plus agréable.</p>
+                </div>
+                
+        
+                <div class="bgi">
+                    <img class="firstIMG" src="logo/js-logo.png" alt="Logo JS">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2 class="CompTitle">PHP & MYSQL</h2>
+                <div class="explanation">
+                    <p class="firstP">Le PHP est un language que j'adore car il rend un site passif intéractif.</p>
+                    <p class="secondP">Je sais comment utiliser $_FILES pour telecharger un fichier fourni par l'utilisateur, $_SESSION pour stocker des informations utiles a la navigation, $_POST ou $_SERVER pour récuperer les actions d'un form.</p>
+                    <p class="thirdP">Pour MYSQL je sais comment séléctionné, insérer, supprimer ou modifier des choses dans la base de données. Grace à ces deux languages j'ai créer une version simplifier de twitter.</p>
+                </div>
+                
+        
+                <div class="bgi">
+                    <img class="firstIMG" src="logo/PHP-logo.png" alt="Logo PHP">
+                    <img class="firstIMG" src="logo/MySQL.png" alt="Logo MySQL">
+                </div>
+            </div>   
         </div>
         
-
-        <div class="bgi">
-            <img class="firstIMG" src="logo/HTML5png.png" alt="Github Logo">
-            <img class="secondIMG" style="display: none;" src="logo/Git-Logo.png" alt="Git Logo">
-        </div>
-            <div class="square jumpTo">
+        <div class="navButton">
+            <div class="swiper-button-next square jumpTo">
                 <span class="material-icons">
                     expand_more
                 </span>
             </div>
+            <div class="swiper-button-prev square jumpTo">
+                <span class="material-icons">
+                    expand_less
+                </span>
+            </div>
+        </div>
+            
     </main>
 
     
-
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="./script.js"></script>
 </body>
 </html>

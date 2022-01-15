@@ -13,6 +13,7 @@
     <title>Projets Louis Perrenot</title>
 </head>
 <body class="project">
+    <div id="snow"></div>
     <header class="header">
         <nav class="navbar">
             <div class="burgerMenu">
@@ -40,30 +41,78 @@
         
     </header>
 
-    <h2 class="projectTitle">AUDIO APP</h2>
-    <main class="projectAnnounce">
-        <div class="explanation">
-            <p class="firstP">Languages utilisés: JavaScript, HTML, CSS</p>
-            <p class="secondP">Une page WEB qui lit des musiques en adaptant son background en fonction de la cover.</p>
-            <p class="thirdP">Une bibliothèque me permet de récuperer la couleur principale de la pochette de la musique pour ensuite l’injécter dans le background.</p>
-            <p class="forthP">La bibliothèque est : “imgcolr-master”.</p>
-            <a id="linkGit" href="https://github.com/LouisPerre/Music-App-Player" target="_blank">
-                <p class="fifthP">Lien github : “https://github.com/LouisPerre/Music-App-Player”</p>
-            </a>
+    
+    <main class="swiper mySwiper projectAnnounce">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="explanation">
+                    <h2 class="projectTitle">AUDIO APP</h2>
+                    <p class="firstP">Languages utilisés: JavaScript, HTML, CSS</p>
+                    <p class="secondP">Une page WEB qui lit des musiques en adaptant son background en fonction de la cover.</p>
+                    <p class="thirdP">Une bibliothèque me permet de récuperer la couleur principale de la pochette de la musique pour ensuite l’injécter dans le background.</p>
+                    <p class="forthP">La bibliothèque est : “imgcolr-master”.</p>
+                    <a id="linkGit" href="https://github.com/LouisPerre/Music-App-Player" target="_blank">
+                        <p class="fifthP">Lien github : “https://github.com/LouisPerre/Music-App-Player”</p>
+                    </a>
+                </div>
+                <div class="separation"></div>
+
+                <div class="bgi">
+                    <img src="img/AudioAPP.PNG" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="explanation">
+                    <h2 class="projectTitle">ANIME APP</h2>
+                    <p class="firstP">Languages utilisés: JavaScript, HTML, CSS, JSON</p>
+                    <p class="secondP">Une page WEB qui appelle une API pour récuperer une liste d'animé et d'ensuite créer une carte associé.</p>
+                    <p class="thirdP">Lors de l'appelle à l'API je reçoit un fichier JSON que je dois gerer en JS pour pouvoir travailler avec.</p>
+                    <p class="forthP">Utilisation de fetch() pour créer une promesse de l'objet de la requete, res.json() pour résoudre la promesse et pouvoir travailler avec l'objet puis map pour créer un tableau javaScript</p>
+                    <a id="linkGit" href="#" target="_blank">
+                        <p class="fifthP">Lien github : “”</p>
+                    </a>
+                </div>
+                <div class="separation"></div>
+
+                <div class="bgi">
+                    <img src="img/AnimeAPP.PNG" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="explanation">
+                    <h2 class="projectTitle">SUPER SIMON</h2>
+                    <p class="firstP">Languages utilisés: JavaScript, HTML, CSS</p>
+                    <p class="secondP">Une page WEB qui lance le jeu 'Simon' grace à des sons et des lumières qui nous permette de jouer</p>
+                    <p class="thirdP">Lors du lancement de la partie plusieurs fonction asynchrone se lance et travaille ensemble pour faire évoluer le niveau de difficulté.</p>
+                    <p class="forthP">Les fonctions dites 'async' servent souvent a contenir une expression await qui interrompt l'éxécution de la fonctgion pour pouvoir résoudre une promesse</p>
+                    <a id="linkGit" href="https://github.com/LouisPerre/Super-Simon" target="_blank">
+                        <p class="fifthP">Lien github : “https://github.com/LouisPerre/Super-Simon”</p>
+                    </a>
+                </div>
+                <div class="separation"></div>
+
+                <div class="bgi">
+                    <img src="img/SuperSimon.PNG" alt="">
+                </div>
+            </div>
         </div>
         
-        <div class="separation"></div>
-
-        <div class="bgi"></div>
-            <div class="square jumpTo">
-                <span class="material-icons">
-                    expand_more
-                </span>
-            </div>
+        
+        <div class="swiper-button-prev square jumpTo">
+            <span class="material-icons">
+                expand_less
+            </span>
+        </div>
+        <div class="swiper-button-next square jumpTo">
+            <span class="material-icons">
+                expand_more
+            </span>
+        </div>
+            
     </main>
 
     
-
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="./script.js"></script>
 </body>
 </html>

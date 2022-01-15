@@ -36,6 +36,7 @@
 body {
   font-family: "PT Sans", sans-serif;
   display: grid;
+  overflow-x: hidden;
   height: auto;
   grid-template-columns: 80px repeat(5, 1fr) 40px;
   grid-template-rows: repeat(8, 1fr);
@@ -47,6 +48,19 @@ body {
     grid-template-columns: 32px 1fr 32px;
     grid-template-rows: calc(100vh - 80px) 80px 1fr;
   }
+}
+
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: -10;
+  background: linear-gradient(#ebebeb, #ebebeb);
+  /* Workaround for Chromium's selective color inversion */
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #c03e3e);
+  top: 0;
+  left: 0;
 }
 
 header {
@@ -465,6 +479,7 @@ header .navbar a .prenom {
   grid-template-columns: 80px 1fr 32px;
   grid-template-rows: 140px 1fr 130px;
   column-gap: 90px;
+  overflow: hidden;
 }
 @media screen and (max-width: 560px) {
   .project {
@@ -514,6 +529,9 @@ header .navbar a .prenom {
   display: flex;
   align-items: center;
   padding-left: 4%;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 @media screen and (max-width: 1000px) {
   .project .projectAnnounce {
@@ -532,7 +550,24 @@ header .navbar a .prenom {
     margin-top: 5%;
   }
 }
-.project .projectAnnounce .explanation {
+.project .projectAnnounce .swiper-wrapper {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  transition-property: transform;
+  position: relative;
+}
+.project .projectAnnounce .swiper-wrapper .swiper-slide {
+  width: 100% !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  transition-property: transform;
+  padding-right: 10%;
+}
+.project .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.25);
   border-radius: 10px;
@@ -543,7 +578,7 @@ header .navbar a .prenom {
   flex-direction: column;
 }
 @media screen and (max-width: 1000px) {
-  .project .projectAnnounce .explanation {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
     width: 95%;
     height: auto;
     order: -1;
@@ -551,11 +586,11 @@ header .navbar a .prenom {
     box-shadow: 0px 10px 10px rgba(51, 51, 51, 0.25);
   }
 }
-.project .projectAnnounce .explanation a {
+.project .projectAnnounce .swiper-wrapper .swiper-slide .explanation a {
   text-decoration: underline dotted grey;
   color: black;
 }
-.project .projectAnnounce .explanation p {
+.project .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
   font-family: "PT Sans", sans-serif;
   white-space: normal;
   word-wrap: break-word;
@@ -564,11 +599,11 @@ header .navbar a .prenom {
   margin: 16px 0;
 }
 @media screen and (max-width: 560px) {
-  .project .projectAnnounce .explanation p {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
     font-size: 16px;
   }
 }
-.project .projectAnnounce .separation {
+.project .projectAnnounce .swiper-wrapper .swiper-slide .separation {
   width: 0;
   height: 100%;
   border: 1px solid black;
@@ -578,15 +613,13 @@ header .navbar a .prenom {
   z-index: -1;
 }
 @media screen and (max-width: 1000px) {
-  .project .projectAnnounce .separation {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .separation {
     display: none;
   }
 }
-.project .projectAnnounce .bgi {
-  border-radius: 10px;
+.project .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
   height: 100%;
   width: 40%;
-  background-image: url(img/AudioAPP.PNG);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -595,12 +628,18 @@ header .navbar a .prenom {
   z-index: -1;
 }
 @media screen and (max-width: 1000px) {
-  .project .projectAnnounce .bgi {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
     height: 35vh;
     width: 95%;
     order: 0;
     position: static;
   }
+}
+.project .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .project .projectAnnounce .square {
   height: 48px;
@@ -703,6 +742,8 @@ header .navbar a .prenom {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce {
@@ -710,7 +751,23 @@ header .navbar a .prenom {
     grid-row: 1/2;
   }
 }
-.competence .projectAnnounce .CompTitle {
+.competence .projectAnnounce .swiper-wrapper {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  transition-property: transform;
+  position: relative;
+}
+.competence .projectAnnounce .swiper-wrapper .swiper-slide {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  transition-property: transform;
+}
+.competence .projectAnnounce .swiper-wrapper .swiper-slide .CompTitle {
   width: 100%;
   text-align: center;
   margin: 1% 0;
@@ -719,11 +776,11 @@ header .navbar a .prenom {
   font-weight: 400;
 }
 @media screen and (max-width: 560px) {
-  .competence .projectAnnounce .CompTitle {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .CompTitle {
     margin: 5% 0;
   }
 }
-.competence .projectAnnounce .explanation {
+.competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.25);
   border-radius: 10px;
@@ -736,24 +793,24 @@ header .navbar a .prenom {
   justify-content: center;
 }
 @media screen and (max-width: 1200px) {
-  .competence .projectAnnounce .explanation {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
     width: 46%;
     height: 75%;
   }
 }
 @media screen and (max-width: 1000px) {
-  .competence .projectAnnounce .explanation {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
     width: 100%;
     height: auto;
     order: 2;
   }
 }
 @media screen and (max-width: 560px) {
-  .competence .projectAnnounce .explanation {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
     margin: 5% 0;
   }
 }
-.competence .projectAnnounce .explanation p {
+.competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
   font-family: "PT Sans", sans-serif;
   white-space: normal;
   word-wrap: break-word;
@@ -762,26 +819,17 @@ header .navbar a .prenom {
   margin: 16px 0;
 }
 @media screen and (max-width: 1200px) {
-  .competence .projectAnnounce .explanation p {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 560px) {
-  .competence .projectAnnounce .explanation p {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
     font-size: 13px;
     line-height: 20px;
   }
 }
-.competence .projectAnnounce .separation {
-  width: 0;
-  height: 100%;
-  border: 1px solid black;
-  margin: 0 1%;
-  position: relative;
-  left: -40px;
-  z-index: -1;
-}
-.competence .projectAnnounce .bgi {
+.competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
   border-radius: 10px;
   height: auto;
   width: 42%;
@@ -792,32 +840,39 @@ header .navbar a .prenom {
   align-items: center;
 }
 @media screen and (max-width: 1000px) {
-  .competence .projectAnnounce .bgi {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
     flex-direction: row;
   }
 }
 @media screen and (max-width: 560px) {
-  .competence .projectAnnounce .bgi {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
     margin: 5%;
   }
 }
-.competence .projectAnnounce .bgi img {
+.competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
   max-height: 387px;
   width: 50%;
   margin: 1%;
 }
 @media screen and (max-width: 1200px) {
-  .competence .projectAnnounce .bgi img {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
     width: 60%;
   }
 }
 @media screen and (max-width: 560px) {
-  .competence .projectAnnounce .bgi img {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
     width: 75%;
     margin-left: 5%;
   }
 }
-.competence .projectAnnounce .square {
+.competence .projectAnnounce .navButton {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-self: center;
+}
+.competence .projectAnnounce .navButton .square {
   height: 48px;
   width: 48px;
   display: flex;
@@ -827,15 +882,15 @@ header .navbar a .prenom {
   border-radius: 10px;
   margin: 1%;
 }
-.competence .projectAnnounce .square span {
+.competence .projectAnnounce .navButton .square span {
   transform: rotate(-90deg);
 }
 @media screen and (max-width: 1000px) {
-  .competence .projectAnnounce .square {
+  .competence .projectAnnounce .navButton .square {
     order: 3;
   }
 }
-.competence .projectAnnounce .jumpTo {
+.competence .projectAnnounce .navButton .jumpTo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -849,10 +904,19 @@ header .navbar a .prenom {
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
-  .competence .projectAnnounce .jumpTo {
+  .competence .projectAnnounce .navButton .jumpTo {
     margin: 0 0 10% 0;
     transform: rotate(0);
   }
+}
+.competence .projectAnnounce .separation {
+  width: 0;
+  height: 100%;
+  border: 1px solid black;
+  margin: 0 1%;
+  position: relative;
+  left: -40px;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */

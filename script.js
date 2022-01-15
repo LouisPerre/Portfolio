@@ -1,5 +1,6 @@
 const burgerMenu = document.querySelector('.burgerMenu')
 const choice = document.querySelector('.list')
+console.log(window.location.pathname)
 
 burgerMenu.addEventListener("click", function() {
     burgerMenu.classList.toggle('open')
@@ -13,139 +14,147 @@ window.addEventListener('resize', () => {
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   });
 
-
-if (window.location.pathname == "/Portfolio/project.html") {
-    const projectTitle = document.querySelector(".projectTitle")
-    const firstP = document.querySelector(".firstP")
-    const secondP = document.querySelector(".secondP")
-    const thirdP = document.querySelector(".thirdP")
-    const forthP = document.querySelector(".forthP")
-    const fifthP = document.querySelector(".fifthP")
-    const illustration = document.querySelector(".bgi")
-    const button = document.querySelector('.square')
-    const link = document.querySelector('#linkGit')
-    console.log(projectTitle)
-
-    button.addEventListener("click", function() {
-        console.log(illustration)
-        if (projectTitle.innerHTML == "ANIME APP") {
-            projectTitle.innerHTML = "AUDIO APP"
-            firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS"
-            secondP.innerHTML = "Une page WEB qui lit des musiques en adaptant son background en fonction de la cover."
-            thirdP.innerHTML = "Une bibliothèque me permet de récuperer la couleur principale de la pochette de la musique pour ensuite l’injécter dans le background."
-            forthP.innerHTML = "La bibliothèque est : “imgcolr-master”."
-            link.style.display = "block"
-            fifthP.style.display = "block"
-            link.href = "https://github.com/LouisPerre/Music-App-Player"
-            fifthP.innerHTML = "Lien github : https://github.com/LouisPerre/Music-App-Player"
-            illustration.style.backgroundImage = "url('img/AudioAPP.PNG')"
-        } else if (projectTitle.innerHTML == "SUPER SIMON") {
-            projectTitle.innerHTML = "ANIME APP"
-            firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS, JSON"
-            secondP.innerHTML = "Une page WEB qui appelle une API pour récuperer une liste d'animé et d'ensuite créer une carte associé"
-            thirdP.innerHTML = "Lors de l'appelle à l'API je reçoit un fichier JSON que je dois gerer en JS pour pouvoir travailler avec"
-            forthP.innerHTML = "Utilisation de fetch() pour créer une promesse de l'objet de la requete, res.json() pour résoudre la promesse et pouvoir travailler avec l'objet puis map pour créer un tableau javaScript"
-            link.style.display = "none"
-            fifthP.style.display = "none"
-            illustration.style.backgroundImage = "url('img/AnimeAPP.PNG')"
-        } else if (projectTitle.innerHTML == "AUDIO APP") {
-            projectTitle.innerHTML = "SUPER SIMON"
-            firstP.innerHTML = "Languages utilisés: JavaScript, HTML, CSS"
-            secondP.innerHTML = "Une page WEB qui lance le jeu 'Simon' grace à des sons et des lumières qui nous permette de jouer"
-            thirdP.innerHTML = "Lors du lancement de la partie plusieurs fonction asynchrone se lance et travaille ensemble pour faire évoluer le niveau de difficulté."
-            forthP.innerHTML = "Les fonctions dites 'async' servent souvent a contenir une expression await qui interrompt l'éxécution de la fonctgion pour pouvoir résoudre une promesse"
-            link.style.display = "block"
-            fifthP.style.display = "block"
-            link.href = "https://github.com/LouisPerre/Super-Simon"
-            fifthP.innerHTML = "Le projet n'est pas fini, voiçi le Lien github : https://github.com/LouisPerre/Super-Simon"
-            illustration.style.backgroundImage = "url('img/SuperSimon.PNG')"
-        }
-
+if (!window.location.pathname.includes("project.html")&& !window.location.pathname.includes("competence.html")) {
+    let compteur = 1
+    let button = document.querySelectorAll('.next');
+    let changeImg = document.querySelector('.image');
+    const img = ['img/AudioAPP.PNG', 'img/AnimeAPP.PNG', 'img/SuperSimon.PNG'];
+    button = Array.apply(null, button)
+    button.forEach(but => {
+        but.addEventListener('click', () => {
+            if (but.classList.contains('rightArr')) {
+                changeImg.style.backgroundImage = "url('" + img[compteur] + "')";
+                compteur += 1;
+                if (compteur == 3) {
+                    compteur = 0
+                }
+            } else if (but.classList.contains('leftArr')) {
+                changeImg.style.backgroundImage = "url('" + img[compteur] + "')";
+                compteur -= 1;
+                if (compteur == -1) {
+                    compteur = 2
+                }
+            }
+        })
     })
 
 }
+  
 
-if (window.location.pathname == "/Portfolio/competence.html") {
-    const projectTitle = document.querySelector(".projectTitle")
-    const CompTitle = document.querySelector(".CompTitle")
-    const firstP = document.querySelector(".firstP")
-    const secondP = document.querySelector(".secondP")
-    const thirdP = document.querySelector(".thirdP")
-    const illustration1 = document.querySelector(".firstIMG")
-    const illustration2 = document.querySelector(".secondIMG")
-    const button = document.querySelector('.square')
-    console.log(projectTitle)
 
-    button.addEventListener("click", function() {
-        console.log(illustration1)
-        if (projectTitle.innerHTML == "PYTHON") {
-            projectTitle.innerHTML = "GIT"
-            CompTitle.innerHTML = "GIT & GITHUB"
-            firstP.innerHTML = "Utilisation complète de GIT, que ce soit en ligne de commande ou via GitKraken, pour une intégration sur github ainsi qu’un travail collaboratif complet."
-            secondP.innerHTML = "Apprentissage lors d’une semaine de cours complète, durant laquelle nous avons vu les conventions de nommage, la création de branche ainsi que la gestion de conflits."
-            thirdP.innerHTML = "Utilisation de git commit, push, clone, pull ainsi que merge"
-            illustration1.src = "logo/GitHub-Logo.png"
-            illustration2.src = "logo/Git-Logo.png"
-            illustration2.style.display = "block"
-            //illustration2.style.width = "100%"
-            //illustration1.style.width = "100%"
-
-        } else if (projectTitle.innerHTML == "HTML") {
-            projectTitle.innerHTML = "CSS"
-            CompTitle.innerHTML = "CSS & SCSS"
-            firstP.innerHTML = "Apprentissage poussé de CSS avec une compréhension du grid, flex ainsi que des transitions."
-            secondP.innerHTML = "Recente formation au SCSS qui comprend l'utilisation des import ainsi que des variables et des conventions de nommages."
-            thirdP.innerHTML = "Utilisation des selecteurs en respectant les forces tels que les class, les tags name, etc."
-            illustration1.src = "logo/CSS3_logo.png"
-            illustration2.src = "logo/Sass_Logo.png"
-            //illustration1.style.width = "50%"
-            illustration2.style.display = "block"
-            //illustration2.style.width = "50%"
-
-        } else if (projectTitle.innerHTML == "CSS") {
-            projectTitle.innerHTML = "JS"
-            CompTitle.innerHTML = "Java Script"
-            firstP.innerHTML = "Le JS est un code très apprécié car il complète le site à l'aide d'animations ou d'effets sur certains éléments HTML"
-            secondP.innerHTML = "Je sais comment selectionner un élément, le modifier, en créer de nouveaux."
-            thirdP.innerHTML = "Je peux aussi créer des animations basiques pour rendre le site plus beau et plus agréable."
-            illustration1.src = "logo/js-logo.png"
-            illustration2.style.display = "none"
-            //illustration1.style.width = "50%"
-
-        } else if (projectTitle.innerHTML == "GIT") {
-            projectTitle.innerHTML = "HTML"
-            CompTitle.innerHTML = "HTML 5"
-            firstP.innerHTML = "Sur du HTML je dirais que je suis plutot à l'aise."
-            secondP.innerHTML = "Je sais comment l'utiliser proprement, en gardant les normes en place sans en avoir peur."
-            thirdP.innerHTML = "Je peux faire un code relativement propre qui respectera les normes W3."
-            illustration1.src = "logo/HTML5png.png"
-            illustration2.style.display = "none"
-            //illustration1.style.width = "50%"
-
-        } else if (projectTitle.innerHTML == "PHP") {
-            projectTitle.innerHTML = "PYTHON"
-            CompTitle.innerHTML = "PYTHON"
-            firstP.innerHTML = "Le python est un language que j'aime énormement car je le trouve simple à utiliser et à comprendre"
-            secondP.innerHTML = "Je peux utiliser à peut près tout les types d'items pour créer de beau algorithmes pour par exemples résdoudre des équations ou créer des suites chiffres validant l'algorithme de Luhn"
-            thirdP.innerHTML = "Le code que je fais peut ne pas paraitre propre mais j'essaye de l'optimiser au mieux"
-            illustration1.src = "logo/Python-logo.png"
-            illustration2.style.display = "none"
-            //illustration1.style.width = "50%"
-
-        } else if (projectTitle.innerHTML == "JS") {
-            projectTitle.innerHTML = "PHP"
-            CompTitle.innerHTML = "PHP & MYSQL"
-            firstP.innerHTML = "Le PHP est un code que j'adore car il rend un site passif intéractif."
-            secondP.innerHTML = "Je sais comment utiliser $_FILES pour telecharger un fichier fourni par l'utilisateur, $_SESSION pour stocker des informations utiles a la navigation, $_POST ou $_SERVER pour récuperer les actions d'un form."
-            thirdP.innerHTML = "Pour MYSQL je sais comment séléctionné, insérer, supprimer ou modifier des choses dans la base de données. Grace à ces deux languages j'ai créer une version simplifier de twitter."
-            illustration1.src = "logo/PHP-logo.png"
-            illustration2.src = "logo/MySQL.png"
-            illustration2.style.display = "block"
-            //illustration1.style.width = "50%"
-            //illustration2.style.width = "50%"
-
+if (window.location.pathname.includes("/project.html")) {
+    var swiper = new Swiper(".swiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
         }
-
-    })
+      });
 
 }
+
+if (window.location.pathname.includes("/competence.html")) {
+    var swiper2 = new Swiper(".swiper2", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      });
+
+}
+
+let snowflakes_count = 200;
+
+// let base_css = ``; // Put your custom base css here
+
+if (typeof total !== 'undefined'){
+    snowflakes_count = total;
+}
+
+
+// This function allows you to turn on and off the snow
+
+// Creating snowflakes
+function spawn_snow(snow_density = 200) {
+    snow_density -= 1;
+
+    for (let x = 0; x < snow_density; x++) {
+        let board = document.createElement('div');
+        board.className = "snowflake";
+
+        document.getElementById('snow').appendChild(board);
+    }
+}
+
+// Append style for each snowflake to the head
+function add_css(rule) {
+    let css = document.createElement('style');
+    css.type = 'text/css';
+    css.appendChild(document.createTextNode(rule)); // Support for the rest
+    document.getElementsByTagName("head")[0].appendChild(css);
+}
+
+
+
+// Math
+function random_int(value = 100){
+    return Math.floor(Math.random() * value) + 1;
+}
+
+function random_range(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// Create style for snowflake
+function spawnSnowCSS(snow_density = 200){
+    let snowflake_name = "snowflake";
+    let rule = ``;
+    if (typeof base_css !== 'undefined'){
+        rule = base_css;
+    }
+    
+    for(let i = 1; i < snow_density; i++){
+        let random_x = Math.random() * 100; // vw
+        let random_offset = random_range(-100000, 100000) * 0.0001; // vw;
+        let random_x_end = random_x + random_offset;
+        let random_x_end_yoyo = random_x + (random_offset / 2);
+        let random_yoyo_time = random_range(30000, 80000) / 100000;
+        let random_yoyo_y = random_yoyo_time * 100; // vh
+        let random_scale = Math.random();
+        let fall_duration = random_range(10, 30) * 1; // s
+        let fall_delay = random_int(30) * -1; // s
+        let opacity_ = Math.random();
+
+        rule += `
+        .${snowflake_name}:nth-child(${i}) {
+            opacity: ${opacity_};
+            transform: translate(${random_x}vw, -10px) scale(${random_scale});
+            animation: fall-${i} ${fall_duration}s ${fall_delay}s linear infinite;
+        }
+
+        @keyframes fall-${i} {
+            ${random_yoyo_time*100}% {
+                transform: translate(${random_x_end}vw, ${random_yoyo_y}vh) scale(${random_scale});
+            }
+
+            to {
+                transform: translate(${random_x_end_yoyo}vw, 100vh) scale(${random_scale});
+            }
+            
+        }
+        `
+    }
+
+    add_css(rule);
+}
+
+// Load the rules and execute after the DOM loads
+window.onload = function() {
+    spawnSnowCSS(snowflakes_count);
+    spawn_snow(snowflakes_count);
+};
+
+// TODO add progress bar for slower clients
+
