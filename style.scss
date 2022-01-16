@@ -40,6 +40,10 @@
     }
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'PT Sans', sans-serif;
     display: grid;

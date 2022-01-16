@@ -33,6 +33,10 @@
     transform: rotate(90deg);
   }
 }
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "PT Sans", sans-serif;
   display: grid;
