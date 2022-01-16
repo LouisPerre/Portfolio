@@ -49,7 +49,6 @@ body {
 @media screen and (max-width: 560px) {
   body {
     width: 100%;
-    column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
     grid-template-rows: calc(100vh - 80px) 80px 1fr;
   }

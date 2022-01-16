@@ -54,7 +54,7 @@ body {
     column-gap: 24px;
     @include m {
         width: 100%;
-        column-gap: 8px;
+        //column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
         grid-template-rows: calc(100vh - 80px) 80px 1fr;
     }
