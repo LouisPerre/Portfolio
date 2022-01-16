@@ -123,7 +123,6 @@ header .navbar {
     justify-content: space-evenly;
     z-index: 4;
     bottom: 0;
-    z-index: 2;
   }
 }
 header .navbar .toTheBottom {
