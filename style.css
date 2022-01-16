@@ -63,6 +63,26 @@ body {
   left: 0;
 }
 
+.reveal {
+  opacity: 0;
+}
+
+.slide {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slide-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: cubic-bezier(0.76, -0.08, 1, 1) 700ms;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transition: cubic-bezier(0.76, -0.08, 1, 1) 700ms;
+}
+
 header {
   height: 100vh;
   grid-column: 1/2;
@@ -97,6 +117,7 @@ header .navbar {
     writing-mode: horizontal-tb;
     transform: rotate(-180deg);
     justify-content: space-evenly;
+    z-index: 4;
   }
 }
 header .navbar .toTheBottom {
@@ -149,7 +170,7 @@ header .navbar ul li {
 @media screen and (max-width: 560px) {
   header .navbar ul li {
     margin-top: 0;
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 header .navbar a {
@@ -165,7 +186,7 @@ header .navbar a span {
 }
 @media screen and (max-width: 560px) {
   header .navbar a span {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 header .navbar a .prenom {
@@ -175,7 +196,7 @@ header .navbar a .prenom {
   header .navbar a {
     text-orientation: upright;
     margin-top: 0;
-    margin-right: 15%;
+    margin-right: 6%;
   }
 }
 
@@ -190,10 +211,16 @@ header .navbar a .prenom {
   align-items: center;
   margin-bottom: 5%;
 }
+@media screen and (max-width: 1150px) {
+  .homepage {
+    margin-bottom: 15%;
+  }
+}
 @media screen and (max-width: 1000px) {
   .homepage {
     width: 100%;
     height: 100%;
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 560px) {
@@ -210,11 +237,21 @@ header .navbar a .prenom {
   font-size: 42px;
   font-family: "ONEDAY";
 }
+@media screen and (max-width: 750px) {
+  .homepage p {
+    font-size: 32px;
+  }
+}
 .homepage .text {
   display: flex;
   position: relative;
   z-index: 2;
   left: 205px;
+}
+@media screen and (max-width: 750px) {
+  .homepage .text {
+    left: 156px;
+  }
 }
 @media screen and (max-width: 560px) {
   .homepage .text {
@@ -285,191 +322,107 @@ header .navbar a .prenom {
   grid-row: 5/9;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-image: url(img/perso/20200925_171537-removebg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  justify-content: flex-end;
   align-items: center;
+}
+@media screen and (max-width: 1450px) {
+  .presentation {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 }
 @media screen and (max-width: 560px) {
   .presentation {
     grid-column: 2/3;
     grid-row: 3/4;
-    height: 100vh;
+    height: 90vh;
     margin-bottom: 80px;
   }
 }
 .presentation img {
-  width: 700px;
-}
-.presentation .firstText {
-  width: 40%;
-  height: 21%;
-  border-radius: 10px;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: 42px;
-  line-height: 54px;
-  text-align: center;
-  margin-top: 2%;
-  align-self: flex-start;
-  margin-left: 6%;
-  justify-content: center;
-}
-@media screen and (max-width: 1800px) {
-  .presentation .firstText {
-    margin-left: 3%;
-  }
-}
-@media screen and (max-width: 1450px) {
-  .presentation .firstText {
-    margin-left: 1%;
-    font-size: 24px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .presentation .firstText {
-    width: 50%;
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 560px) {
-  .presentation .firstText {
-    align-self: center;
-    margin-left: 0;
-    width: 80%;
-    line-height: 32px;
-  }
-}
-.presentation .secondText {
-  width: 23%;
-  height: 25%;
-  border-radius: 10px;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: 42px;
-  line-height: 54px;
-  text-align: center;
-  margin-top: 2%;
-  align-self: flex-end;
-  margin-right: 21%;
-  justify-content: center;
-}
-@media screen and (max-width: 1800px) {
-  .presentation .secondText {
-    margin-right: 18%;
-  }
-}
-@media screen and (max-width: 1450px) {
-  .presentation .secondText {
-    height: 20%;
-    margin-right: 11%;
-    font-size: 24px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .presentation .secondText {
-    width: 40%;
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 560px) {
-  .presentation .secondText {
-    align-self: center;
-    margin-right: 0;
-    width: 80%;
-    line-height: 32px;
-  }
-}
-.presentation .thirdText {
-  width: 30%;
-  height: 23%;
-  border-radius: 10px;
-  box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.25);
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: 42px;
-  line-height: 54px;
-  text-align: center;
-  margin-top: 2%;
-  align-self: flex-start;
+  height: 100%;
+  max-width: 60%;
   margin-left: 10%;
-  justify-content: center;
-}
-@media screen and (max-width: 1800px) {
-  .presentation .thirdText {
-    margin-left: 5%;
-  }
 }
 @media screen and (max-width: 1450px) {
-  .presentation .thirdText {
-    height: 20%;
-    margin-left: 3%;
-    font-size: 24px;
+  .presentation img {
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }
-@media screen and (max-width: 1200px) {
-  .presentation .thirdText {
-    width: 50%;
-    font-size: 16px;
+@media screen and (max-width: 1000px) {
+  .presentation img {
+    height: 70%;
   }
 }
-@media screen and (max-width: 560px) {
-  .presentation .thirdText {
-    align-self: center;
-    margin-left: 0;
-    width: 80%;
-    line-height: 32px;
+@media screen and (max-width: 750px) {
+  .presentation img {
+    display: none;
   }
 }
-.presentation .forthText {
-  width: 23%;
-  height: 25%;
-  border-radius: 10px;
-  box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.25);
-  background-color: white;
+.presentation .infoPerso {
+  max-width: 40%;
   display: flex;
   flex-direction: column;
-  font-size: 42px;
-  line-height: 54px;
-  text-align: center;
-  margin-top: 2%;
-  align-self: flex-end;
-  margin-right: 10%;
-  justify-content: center;
-}
-@media screen and (max-width: 1800px) {
-  .presentation .forthText {
-    margin-right: 18%;
-  }
+  gap: 1rem;
+  position: relative;
 }
 @media screen and (max-width: 1450px) {
-  .presentation .forthText {
-    height: 20%;
-    margin-right: 11%;
+  .presentation .infoPerso {
+    margin-right: 15%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .presentation .infoPerso {
+    margin-right: 25%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .presentation .infoPerso {
+    margin-right: 40%;
+    max-width: 52%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .presentation .infoPerso {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+.presentation .infoPerso p {
+  max-width: 100%;
+  font-size: 36px;
+  -webkit-text-stroke: black 0.75px;
+  color: white;
+}
+@media screen and (max-width: 1450px) {
+  .presentation .infoPerso p {
     font-size: 24px;
   }
 }
-@media screen and (max-width: 1200px) {
-  .presentation .forthText {
-    width: 40%;
-    font-size: 16px;
-  }
+.presentation .infoPerso .clone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  color: black;
+  overflow: hidden;
+  width: 100%;
 }
-@media screen and (max-width: 560px) {
-  .presentation .forthText {
-    align-self: center;
-    margin-right: 0;
-    width: 80%;
-    line-height: 32px;
-  }
+.presentation .infoPerso a {
+  display: flex;
+  background-color: black;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-family: "ONEDAY";
 }
 
 .project {
@@ -481,11 +434,25 @@ header .navbar a .prenom {
   column-gap: 90px;
   overflow: hidden;
 }
+@media screen and (max-width: 1450px) {
+  .project {
+    grid-template-rows: 70px 1fr 70px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .project {
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .project {
+    grid-template-rows: 45px 1fr 45px;
+  }
+}
 @media screen and (max-width: 560px) {
   .project {
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
-    grid-template-rows: 80px 1fr 80px;
   }
 }
 .project header {
@@ -513,6 +480,11 @@ header .navbar a .prenom {
   margin: 1%;
   font-family: "ONEDAY";
 }
+@media screen and (max-width: 1000px) {
+  .project .projectTitle {
+    font-size: 20px;
+  }
+}
 @media screen and (max-width: 560px) {
   .project .projectTitle {
     align-self: start;
@@ -533,21 +505,19 @@ header .navbar a .prenom {
   flex-wrap: wrap;
   overflow: hidden;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .project .projectAnnounce {
-    flex-wrap: wrap-reverse;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    justify-self: center;
+    align-items: start;
     padding: 0;
-    justify-content: center;
-    justify-self: normal;
-    align-self: normal;
   }
 }
 @media screen and (max-width: 560px) {
   .project .projectAnnounce {
     grid-row: 2/3;
-    margin-top: 5%;
+    height: 100%;
+    align-self: start;
   }
 }
 .project .projectAnnounce .swiper-wrapper {
@@ -556,6 +526,16 @@ header .navbar a .prenom {
   display: flex;
   transition-property: transform;
   position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .project .projectAnnounce .swiper-wrapper {
+    height: 90%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .project .projectAnnounce .swiper-wrapper {
+    height: 77%;
+  }
 }
 .project .projectAnnounce .swiper-wrapper .swiper-slide {
   width: 100% !important;
@@ -567,6 +547,28 @@ header .navbar a .prenom {
   transition-property: transform;
   padding-right: 10%;
 }
+@media screen and (max-width: 1450px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide {
+    padding-right: 5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide {
+    flex-direction: column-reverse;
+    justify-content: start;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 560px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide {
+    height: 100%;
+  }
+}
 .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.25);
@@ -577,12 +579,14 @@ header .navbar a .prenom {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
     width: 95%;
-    height: auto;
-    order: -1;
-    margin-top: 5%;
+    height: 75%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
     box-shadow: 0px 10px 10px rgba(51, 51, 51, 0.25);
   }
 }
@@ -598,6 +602,18 @@ header .navbar a .prenom {
   line-height: 31px;
   margin: 16px 0;
 }
+@media screen and (max-width: 1200px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
+    font-size: 16px;
+    line-height: 14px;
+  }
+}
 @media screen and (max-width: 560px) {
   .project .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
     font-size: 16px;
@@ -612,7 +628,7 @@ header .navbar a .prenom {
   left: -40px;
   z-index: -1;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .project .projectAnnounce .swiper-wrapper .swiper-slide .separation {
     display: none;
   }
@@ -627,12 +643,24 @@ header .navbar a .prenom {
   left: -40px;
   z-index: -1;
 }
+@media screen and (max-width: 1200px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
+    height: 25%;
+    width: 95%;
+    position: unset;
+  }
+}
 @media screen and (max-width: 1000px) {
   .project .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
     height: 35vh;
     width: 95%;
     order: 0;
     position: static;
+  }
+}
+@media screen and (max-width: 560px) {
+  .project .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
+    height: 25%;
   }
 }
 .project .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
@@ -667,8 +695,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .project .projectAnnounce .jumpTo {
-    order: -2;
-    margin: 40px 0;
+    margin: 0 15px;
   }
 }
 
@@ -679,6 +706,18 @@ header .navbar a .prenom {
   grid-template-columns: 80px 1fr 32px;
   grid-template-rows: 100px 1fr 130px;
   column-gap: 90px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1450px) {
+  .competence {
+    height: 100vh;
+    grid-template-rows: 100px 1fr 70px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .competence {
+    column-gap: 15px;
+  }
 }
 @media screen and (max-width: 560px) {
   .competence {
@@ -745,6 +784,11 @@ header .navbar a .prenom {
   flex-wrap: wrap;
   overflow: hidden;
 }
+@media screen and (max-width: 1450px) {
+  .competence .projectAnnounce {
+    align-items: start;
+  }
+}
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce {
     height: calc(var(--vh, 1vh) * 100 - 80px);
@@ -752,8 +796,8 @@ header .navbar a .prenom {
   }
 }
 .competence .projectAnnounce .swiper-wrapper {
-  width: 90%;
-  height: 100%;
+  width: 100%;
+  height: 90%;
   display: flex;
   transition-property: transform;
   position: relative;
@@ -761,11 +805,18 @@ header .navbar a .prenom {
 .competence .projectAnnounce .swiper-wrapper .swiper-slide {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 100% !important;
   align-items: center;
   flex-shrink: 0;
   position: relative;
   transition-property: transform;
+  justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide {
+    flex-wrap: unset;
+    flex-direction: column;
+  }
 }
 .competence .projectAnnounce .swiper-wrapper .swiper-slide .CompTitle {
   width: 100%;
@@ -774,6 +825,11 @@ header .navbar a .prenom {
   font-family: "ONEDAY";
   font-size: 42px;
   font-weight: 400;
+}
+@media screen and (max-width: 1200px) {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .CompTitle {
+    order: -2;
+  }
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .CompTitle {
@@ -794,19 +850,19 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 1200px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
-    width: 46%;
+    width: 95%;
     height: 75%;
   }
 }
 @media screen and (max-width: 1000px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
-    width: 100%;
-    height: auto;
-    order: 2;
+    margin-top: 4%;
+    height: 40%;
   }
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
+    height: 50%;
     margin: 5% 0;
   }
 }
@@ -823,10 +879,14 @@ header .navbar a .prenom {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
+    line-height: 20px;
+  }
+}
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 15px;
   }
 }
 .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
@@ -839,6 +899,12 @@ header .navbar a .prenom {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (max-width: 1200px) {
+  .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
+    flex-direction: row;
+    order: -1;
+  }
+}
 @media screen and (max-width: 1000px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
     flex-direction: row;
@@ -846,17 +912,17 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi {
+    width: 70%;
     margin: 5%;
   }
 }
 .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
-  max-height: 387px;
-  width: 50%;
+  max-height: 175px;
   margin: 1%;
 }
 @media screen and (max-width: 1200px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
-    width: 60%;
+    max-width: 175px;
   }
 }
 @media screen and (max-width: 560px) {
@@ -867,7 +933,7 @@ header .navbar a .prenom {
 }
 .competence .projectAnnounce .navButton {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   gap: 1rem;
   justify-content: center;
   align-self: center;

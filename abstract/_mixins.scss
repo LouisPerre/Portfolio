@@ -22,10 +22,26 @@ $l : 1200px;
     }
 }
 
+$sxl : 1150px;
+
+@mixin sxl {
+    @media screen and (max-width: $sxl) {
+        @content
+    }
+}
+
 $sl : 1000px;
 
 @mixin sl {
     @media screen and (max-width: $sl) {
+        @content
+    }
+}
+
+$sm : 750px;
+
+@mixin sm {
+    @media screen and (max-width: $sm) {
         @content
     }
 }

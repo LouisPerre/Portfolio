@@ -67,6 +67,26 @@ body {
     left: 0;
 }
 
+.reveal {
+    opacity: 0;
+}
+
+.slide {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.slide-visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: cubic-bezier(0.76, -0.08, 1, 1) 700ms;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transition: cubic-bezier(0.76, -0.08, 1, 1) 700ms;
+}
+
 header {
     height: 100vh;
     grid-column: 1 / 2;
@@ -99,6 +119,7 @@ header {
             writing-mode: horizontal-tb;
             transform: rotate(-180deg);
             justify-content: space-evenly;
+            z-index: 4;
         }
 
         .toTheBottom {
@@ -151,7 +172,7 @@ header {
 
                 @include m {
                     margin-top: 0;
-                    font-size: 12px;
+                    font-size: 16px;
                 }
             }
         }
@@ -170,7 +191,7 @@ header {
                 font-size: 24px;
 
                 @include m {
-                    font-size: 12px;
+                    font-size: 16px;
                 }
             }
             
@@ -182,7 +203,7 @@ header {
             @include m {
                 text-orientation: upright;
                 margin-top: 0;
-                margin-right: 15%;
+                margin-right: 6%;
             }
         }
     }
@@ -198,9 +219,13 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: 5%;
+    @include sxl {
+        margin-bottom: 15%;
+    }
     @include sl {
         width: 100%;
         height: 100%;
+        margin-bottom: 0;
     }
 
     @include m {
@@ -217,6 +242,9 @@ header {
         white-space: nowrap;
         font-size: 42px;
         font-family: 'ONEDAY';
+        @include sm {
+            font-size: 32px;
+        }
     }
 
     .text {
@@ -224,6 +252,9 @@ header {
         position: relative;
         z-index: 2;
         left: 205px;
+        @include sm {
+            left: 156px;
+        }
         @include m {
             display: none;
         }
@@ -302,167 +333,95 @@ header {
     grid-row: 5 / 9;
     overflow: hidden;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-image: url(img/perso/20200925_171537-removebg.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    justify-content: flex-end;
     align-items: center;
+    @include xl {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
     @include m {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
-        height: 100vh;
+        height: 90vh;
         margin-bottom: 80px;
     }
 
     img {
-        width: 700px;
+        height: 100%;
+        max-width: 60%;
+        margin-left: 10%;
+        @include xl {
+            height: 80%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        @include sl {
+            height: 70%;
+        }
+        @include sm {
+            display: none;
+        }
+    }
+
+    .infoPerso {
+        max-width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        @include xl {
+            margin-right: 15%;
+        }
+        @include sxl {
+            margin-right: 25%;
+        }
+        @include sl {
+            margin-right: 40%;
+            max-width: 52%;
+        }
+        @include sm {
+            margin-right: 0;
+            max-width: 100%;
+        }
+        p {
+            max-width: 100%;
+            font-size: 36px;
+            -webkit-text-stroke: black 0.75px;
+            color: white;
+            @include xl {
+                font-size: 24px;
+            }
+    
+        }
+        .clone {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            color: black;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        a {
+            display: flex;
+            background-color: black;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            font-family: "ONEDAY";
+        }
+
         
     }
 
-    .firstText {
-       width: 40%;
-       height: 21%;
-       border-radius: 10px;
-       box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
-       background-color: white;
-       display: flex;
-       flex-direction: column;
-       font-size: 42px;
-       line-height: 54px;
-       text-align: center;
-       margin-top: 2%;
-       align-self: flex-start;
-       margin-left: 6%;
-       justify-content: center;
-       @include xxl {
-           margin-left: 3%;
-       }
-
-       @include xl {
-            margin-left: 1%;
-            font-size: 24px;
-        }
-        @include l {
-            width: 50%;
-            font-size: 16px;
-        }
-        @include m {
-            align-self: center;
-            margin-left: 0;
-            width: 80%;
-            line-height: 32px;
-        }
-    }
-
-    .secondText {
-        width: 23%;
-       height: 25%;
-       border-radius: 10px;
-       box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
-       background-color: white;
-       display: flex;
-       flex-direction: column;
-       font-size: 42px;
-       line-height: 54px;
-       text-align: center;
-       margin-top: 2%;
-       align-self: flex-end;
-       margin-right: 21%;
-       justify-content: center;
-       @include xxl {
-            margin-right: 18%;
-        }
-
-        @include xl {
-            height: 20%;
-            margin-right: 11%;
-            font-size: 24px;
-        }
-        @include l {
-            width: 40%;
-            font-size: 16px;
-        }
-        @include m {
-            align-self: center;
-            margin-right: 0;
-            width: 80%;
-            line-height: 32px;
-        }
-    }
-
-    .thirdText {
-        width: 30%;
-       height: 23%;
-       border-radius: 10px;
-       box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.25);
-       background-color: white;
-       display: flex;
-       flex-direction: column;
-       font-size: 42px;
-       line-height: 54px;
-       text-align: center;
-       margin-top: 2%;
-       align-self: flex-start;
-       margin-left: 10%;
-       justify-content: center;
-       @include xxl {
-            margin-left: 5%;
-        }
-
-        @include xl {
-            height: 20%;
-            margin-left: 3%;
-            font-size: 24px;
-        }
-        @include l {
-            width: 50%;
-            font-size: 16px;
-        }
-        @include m {
-            align-self: center;
-            margin-left: 0;
-            width: 80%;
-            line-height: 32px;
-        }
-    }
-
-    .forthText {
-        width: 23%;
-       height: 25%;
-       border-radius: 10px;
-       box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.25);
-       background-color: white;
-       display: flex;
-       flex-direction: column;
-       font-size: 42px;
-       line-height: 54px;
-       text-align: center;
-       margin-top: 2%;
-       align-self: flex-end;
-       margin-right: 10%;
-       justify-content: center;
-       @include xxl {
-            margin-right: 18%;
-        }
-
-        @include xl {
-            height: 20%;
-            margin-right: 11%;
-            font-size: 24px;
-        }
-        @include l {
-            width: 40%;
-            font-size: 16px;
-        }
-        @include m {
-            align-self: center;
-            margin-right: 0;
-            width: 80%;
-            line-height: 32px;
-        }
-    }
+    
 }
 
 .project {
@@ -473,10 +432,18 @@ header {
     grid-template-rows: 140px 1fr 130px;
     column-gap: 90px;
     overflow: hidden;
+    @include xl {
+        grid-template-rows: 70px 1fr 70px;
+    }
+    @include l {
+        height: 100vh;
+    }
+    @include sl {
+        grid-template-rows: 45px 1fr 45px;
+    }
     @include m {
         column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
-        grid-template-rows: 80px 1fr 80px;
     }
     
 
@@ -505,7 +472,9 @@ header {
         justify-self: flex-start;
         margin: 1%;
         font-family: 'ONEDAY';
-
+        @include sl {
+            font-size: 20px;
+        }
         @include m {
             align-self: start;
             padding: 5%;
@@ -525,26 +494,19 @@ header {
         justify-content: center;
         flex-wrap: wrap;
         overflow: hidden;
-        @include sl {
-            flex-wrap: wrap-reverse;
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
-            //-ms-overflow-style: none;
-            //scrollbar-width: none;
+        @include l {
+            height: 100%;
+            justify-self: center;
+            align-items: start;
             padding: 0;
-            justify-content: center;
-            justify-self: normal;
-            align-self: normal;
+        }
+        @include sl {
         }
         @include m {
             //height: calc(var(--vh, 1vh) * 100 - 80px);
             grid-row: 2/3;
-            
-            
-            
-            margin-top: 5%;
-            
-            
+            height: 100%;
+            align-self: start;
         }
 
         .swiper-wrapper {
@@ -553,6 +515,12 @@ header {
             display: flex;
             transition-property: transform;
             position: relative;
+            @include l {
+                height: 90%;
+            }
+            @include m {
+                height: 77%;
+            }
 
             .swiper-slide {
                 width: 100% !important;
@@ -563,6 +531,20 @@ header {
                 position: relative;
                 transition-property: transform;
                 padding-right: 10%;
+                @include xl {
+                    padding-right: 5%;
+                }
+                @include l {
+                    flex-direction: column-reverse;
+                    justify-content: start;
+                    height: 100%;
+                }
+                @include sl {
+                    padding: 0;
+                }
+                @include m {
+                    height: 100%;
+                }
                 .explanation {
                     background: #FFFFFF;
                     box-shadow: 0px 10px 20px rgba(51, 51, 51, 0.25);
@@ -572,12 +554,11 @@ header {
                     padding: 2%;
                     display: flex;
                     flex-direction: column;
-        
-                    @include sl {
+                    @include l {
                         width: 95%;
-                        height: auto;
-                        order: -1;
-                        margin-top: 5%;
+                        height: 75%;
+                    }
+                    @include sl {
                         box-shadow: 0px 10px 10px rgba(51, 51, 51, 0.25);
                     }
         
@@ -593,7 +574,14 @@ header {
                         font-size: 24px;
                         line-height: 31px;
                         margin: 16px 0;
-        
+                        @include l {
+                            font-size: 20px;
+                            line-height: 20px;
+                        }
+                        @include sl {
+                            font-size: 16px;
+                            line-height: 14px;
+                        }
                         @include m {
                             font-size: 16px;
                         }
@@ -610,7 +598,7 @@ header {
                     position: relative;
                     left: -40px;
                     z-index: -1;
-                    @include sl {
+                    @include l {
                         display: none;
                     }
                     
@@ -625,11 +613,19 @@ header {
                     position: relative;
                     left: -40px;
                     z-index: -1;
+                    @include l {
+                        height: 25%;
+                        width: 95%;
+                        position: unset;
+                    }
                     @include sl {
                         height: 35vh;
                         width: 95%;
                         order: 0;
                         position: static;
+                    }
+                    @include m {
+                        height: 25%;
                     }
 
                     img {
@@ -672,8 +668,7 @@ header {
             cursor: pointer;
             //animation: scale 850ms infinite;
             @include m {
-                order: -2;
-                margin: 40px 0;
+                margin: 0 15px;
             }
         }
     }
@@ -687,6 +682,14 @@ header {
     grid-template-columns: 80px 1fr 32px;
     grid-template-rows: 100px 1fr 130px;
     column-gap: 90px;
+    overflow: hidden;
+    @include xl {
+        height: 100vh;
+        grid-template-rows: 100px 1fr 70px;
+    }
+    @include sm {
+        column-gap: 15px;
+    }
     @include m {
         column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
@@ -748,6 +751,9 @@ header {
         justify-content: center;
         flex-wrap: wrap;
         overflow: hidden;
+        @include xl {
+            align-items: start;
+        }
         @include m {
             //height: calc(100vh - 80px);
             height: calc(var(--vh, 1vh) * 100 - 80px);
@@ -755,19 +761,24 @@ header {
         }
 
         .swiper-wrapper {
-            width: 90%;
-            height: 100%;
+            width: 100%;
+            height: 90%;
             display: flex;
             transition-property: transform;
             position: relative;
             .swiper-slide {
                 display: flex;
                 flex-wrap: wrap;
-                width: 100%;
+                width: 100% !important;
                 align-items: center;
                 flex-shrink: 0;
                 position: relative;
                 transition-property: transform;
+                justify-content: center;
+                @include l {
+                    flex-wrap: unset;
+                    flex-direction: column;
+                }
                 .CompTitle {
                     width: 100%;
                     text-align: center;
@@ -775,6 +786,9 @@ header {
                     font-family: 'ONEDAY';
                     font-size: 42px;
                     font-weight: 400;
+                    @include l {
+                        order: -2;
+                    }
                     @include m {
                         margin: 5% 0;
                     }
@@ -791,15 +805,15 @@ header {
                     text-align: center;
                     justify-content: center;
                     @include l {
-                        width: 46%;
+                        width: 95%;
                         height: 75%;
                     }
                     @include sl {
-                        width: 100%;
-                        height: auto;
-                        order: 2;
+                        margin-top: 4%;
+                        height: 40%;
                     }
                     @include m {
+                        height: 50%;
                         margin: 5% 0;
                     }
         
@@ -815,9 +829,11 @@ header {
                         @include l {
                             font-size: 16px;
                         }
-                        @include m {
-                            font-size: 13px;
+                        @include sl {
                             line-height: 20px;
+                        }
+                        @include m {
+                            font-size: 15px;
                         }
                     }
                 }
@@ -830,19 +846,23 @@ header {
                     justify-content: center;
                     flex-direction: column;
                     align-items: center;
+                    @include l {
+                        flex-direction: row;
+                        order: -1;
+                    }
                     @include sl {
                         flex-direction: row;
                     }
                     @include m {
+                        width: 70%;
                         margin: 5%;
                     }
         
                     img {
-                        max-height: 387px;
-                        width: 50%;
+                        max-height: 175px;
                         margin: 1%;
                         @include l {
-                            width: 60%;
+                            max-width: 175px;
                         }
                         
         
@@ -858,7 +878,7 @@ header {
 
         .navButton {
             display: flex;
-            flex-direction: column;
+            flex-direction: row-reverse;
             gap: 1rem;
             justify-content: center;
             align-self: center;

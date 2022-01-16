@@ -1,10 +1,49 @@
 const burgerMenu = document.querySelector('.burgerMenu')
 const choice = document.querySelector('.list')
-console.log(window.location.pathname)
 
 burgerMenu.addEventListener("click", function() {
     burgerMenu.classList.toggle('open')
     choice.classList.toggle('open')
+})
+
+const ratio = 0.4;
+const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratio
+}
+const handleIntersect = function(entries, observer) {
+    entries.forEach(function(entry) {
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target)
+        }
+    })
+}
+
+const observer = new IntersectionObserver(handleIntersect, options);
+document.querySelectorAll('.reveal').forEach(function(r) {
+    observer.observe(r)
+})
+
+const ratio2 = 0.1;
+const options2 = {
+    root: null,
+    rootMargin: "0px",
+    threshold: ratio2
+}
+const handleIntersect2 = function(entries, observer) {
+    entries.forEach(function(entry) {
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('slide-visible');
+            observer.unobserve(entry.target)
+        }
+    })
+}
+
+const observer2 = new IntersectionObserver(handleIntersect2, options2);
+document.querySelectorAll('.slide').forEach(function(r) {
+    observer2.observe(r)
 })
 
 
@@ -62,7 +101,7 @@ if (window.location.pathname.includes("/competence.html")) {
 
 }
 
-let snowflakes_count = 200;
+let snowflakes_count = 50;
 
 // let base_css = ``; // Put your custom base css here
 
