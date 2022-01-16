@@ -155,12 +155,12 @@ function spawnSnowCSS(snow_density = 200){
     }
     
     for(let i = 1; i < snow_density; i++){
-        let random_x = Math.random() * 100; // vw
-        let random_offset = random_range(-100000, 100000) * 0.0001; // vw;
+        let random_x = (Math.random() * 100) - 100; // vw
+        let random_offset = (random_range(-100000, 100000) * 0.0001) - 100; // vw;
         let random_x_end = random_x + random_offset;
         let random_x_end_yoyo = random_x + (random_offset / 2);
         let random_yoyo_time = random_range(30000, 80000) / 100000;
-        let random_yoyo_y = random_yoyo_time * 100; // vh
+        let random_yoyo_y = (random_yoyo_time * 100) - 100; // vh
         let random_scale = Math.random();
         let fall_duration = random_range(10, 30) * 1; // s
         let fall_delay = random_int(30) * -1; // s
