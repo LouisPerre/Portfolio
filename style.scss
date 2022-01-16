@@ -53,7 +53,7 @@ body {
     grid-template-rows: repeat(8, 1fr);
     column-gap: 24px;
     @include m {
-        width: 100vw;
+        width: 100%;
         column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
         grid-template-rows: calc(100vh - 80px) 80px 1fr;
