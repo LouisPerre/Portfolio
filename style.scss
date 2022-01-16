@@ -119,11 +119,13 @@ header {
         overflow: hidden;
         @include m {
             height: 80px;
-            width: 100vw;
+            width: 100%;
             writing-mode: horizontal-tb;
             transform: rotate(-180deg);
             justify-content: space-evenly;
             z-index: 4;
+            bottom: 0;
+            z-index: 2;
         }
 
         .toTheBottom {
