@@ -446,6 +446,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .project {
+    overflow: unset;
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
   }
@@ -711,6 +712,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence {
+    overflow: unset;
     width: 100%;
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
