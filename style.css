@@ -886,6 +886,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation p {
+    margin: 8px 0;
     font-size: 15px;
   }
 }
@@ -929,6 +930,7 @@ header .navbar a .prenom {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .bgi img {
     width: 75%;
     margin-left: 5%;
+    max-width: 90px;
   }
 }
 .competence .projectAnnounce .navButton {

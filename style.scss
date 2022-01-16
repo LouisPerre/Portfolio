@@ -833,6 +833,7 @@ header {
                             line-height: 20px;
                         }
                         @include m {
+                            margin: 8px 0;
                             font-size: 15px;
                         }
                     }
@@ -869,7 +870,7 @@ header {
                         @include m {
                             width: 75%;
                             margin-left: 5%;
-                            
+                            max-width: 90px;
                         }
                     }
                 }
