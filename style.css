@@ -113,7 +113,7 @@ header .navbar {
 @media screen and (max-width: 560px) {
   header .navbar {
     height: 80px;
-    width: 100%;
+    width: 100vw;
     writing-mode: horizontal-tb;
     transform: rotate(-180deg);
     justify-content: space-evenly;
@@ -439,11 +439,6 @@ header .navbar a .prenom {
     grid-template-rows: 70px 1fr 70px;
   }
 }
-@media screen and (max-width: 1200px) {
-  .project {
-    height: 100vh;
-  }
-}
 @media screen and (max-width: 1000px) {
   .project {
     grid-template-rows: 45px 1fr 45px;
@@ -530,11 +525,6 @@ header .navbar a .prenom {
 @media screen and (max-width: 1200px) {
   .project .projectAnnounce .swiper-wrapper {
     height: 90%;
-  }
-}
-@media screen and (max-width: 560px) {
-  .project .projectAnnounce .swiper-wrapper {
-    height: 77%;
   }
 }
 .project .projectAnnounce .swiper-wrapper .swiper-slide {
@@ -721,7 +711,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence {
-    width: 100vw;
+    width: 100%;
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
     grid-template-rows: calc(100vh - 80px) 80px;
@@ -792,7 +782,6 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce {
-    height: calc(var(--vh, 1vh) * 100 - 80px);
     grid-row: 1/2;
   }
 }
@@ -835,6 +824,7 @@ header .navbar a .prenom {
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .CompTitle {
     margin: 5% 0;
+    margin-top: 20%;
   }
 }
 .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
@@ -863,7 +853,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence .projectAnnounce .swiper-wrapper .swiper-slide .explanation {
-    height: 50%;
+    height: 70%;
     margin: 5% 0;
   }
 }

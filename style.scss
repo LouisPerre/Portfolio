@@ -115,7 +115,7 @@ header {
         overflow: hidden;
         @include m {
             height: 80px;
-            width: 100%;
+            width: 100vw;
             writing-mode: horizontal-tb;
             transform: rotate(-180deg);
             justify-content: space-evenly;
@@ -436,7 +436,7 @@ header {
         grid-template-rows: 70px 1fr 70px;
     }
     @include l {
-        height: 100vh;
+        //height: 100vh;
     }
     @include sl {
         grid-template-rows: 45px 1fr 45px;
@@ -517,9 +517,6 @@ header {
             position: relative;
             @include l {
                 height: 90%;
-            }
-            @include m {
-                height: 77%;
             }
 
             .swiper-slide {
@@ -691,7 +688,7 @@ header {
         column-gap: 15px;
     }
     @include m {
-        width: 100vw;
+        width: 100%;
         column-gap: 8px;
         grid-template-columns: 32px 1fr 32px;
         grid-template-rows: calc(100vh - 80px) 80px;
@@ -757,7 +754,6 @@ header {
         }
         @include m {
             //height: calc(100vh - 80px);
-            height: calc(var(--vh, 1vh) * 100 - 80px);
             grid-row: 1 / 2;
         }
 
@@ -792,6 +788,7 @@ header {
                     }
                     @include m {
                         margin: 5% 0;
+                        margin-top: 20%;
                     }
                 }
                 .explanation {
@@ -814,7 +811,7 @@ header {
                         height: 40%;
                     }
                     @include m {
-                        height: 50%;
+                        height: 70%;
                         margin: 5% 0;
                     }
         
