@@ -721,6 +721,7 @@ header .navbar a .prenom {
 }
 @media screen and (max-width: 560px) {
   .competence {
+    width: 100vw;
     column-gap: 8px;
     grid-template-columns: 32px 1fr 32px;
     grid-template-rows: calc(100vh - 80px) 80px;
