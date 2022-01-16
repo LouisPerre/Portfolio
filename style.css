@@ -734,6 +734,12 @@ header .navbar a .prenom {
     z-index: 2;
   }
 }
+@media screen and (max-width: 560px) {
+  .competence header .navbar {
+    bottom: 0;
+    z-index: 2;
+  }
+}
 .competence .projectTitle {
   grid-column: 2/3;
   grid-row: 1/2;

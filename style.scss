@@ -709,6 +709,12 @@ header {
             grid-row: 2 / 3;
             z-index: 2;
         }
+        .navbar {
+            @include m {
+                bottom: 0;
+                z-index: 2;
+            }
+        }
     }
 
     .projectTitle {
